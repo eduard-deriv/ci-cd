@@ -1,4 +1,5 @@
 name: CI
+# on: [push] use like this and its run checks when adding to any branch
 on:
   push:
     branches: [ master ]
@@ -9,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        #        node-version: [ 12.x, 14.x, 16.x ] write and check more than one node-version
         node-version: [ 16.x ]
     steps:
       - uses: actions/checkout@v3
